@@ -23,9 +23,9 @@ def result():
 
 		foo = []
 		bar = []
-		
-		for tweet in ptweets[:10]: 
-			foo.append(tweet['text'])		
+
+		for tweet in ptweets[:10]:
+			foo.append(tweet['text'])
 
 		# print(foo)
 
@@ -34,7 +34,7 @@ def result():
 		#Negative tweets
 		ntweets = [tweet for tweet in tweets if tweet['sentiment'] == 'negative']
 
-		for twee in ntweets[:10]: 
+		for twee in ntweets[:10]:
 			bar.append(twee['text'])
 
 		# print("Negative tweets percentage: {} %".format(100*len(ntweets)/len(tweets)))
@@ -42,14 +42,14 @@ def result():
 		nPer = 100*len(ntweets)/len(tweets)
 
 		pPer = 100 - nPer
-		# print("\n\nPositive tweets:") 
-		# for tweet in ptweets[:10]: 
-		# 	print(tweet['text']) 
-
-		# print("\n\nNegative tweets:") 
-		# for tweet in ntweets[:10]: 
+		# print("\n\nPositive tweets:")
+		# for tweet in ptweets[:10]:
 		# 	print(tweet['text'])
-		# bar = "Aditya"
+
+		# print("\n\nNegative tweets:")
+		# for tweet in ntweets[:10]:
+		# 	print(tweet['text'])
+		# bar = "Akshar"
 		# print(ptweets)
 		return render_template('result.html', ptwee = foo, ntwee = bar, nPer = ('%.2f'%nPer), pPer = ('%.2f'%pPer))
 
